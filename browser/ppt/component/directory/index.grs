@@ -1,0 +1,18 @@
+<template>
+  <div data-x='2000' id='directory' styleName='directory' className='step pure-text'>
+    <h3 style='margin: 0.3rem 0;'>目录</h3>
+    <h2 styleName='sub-title'>主要流程分析</h2>
+    <h2 styleName='sub-title'>浏览器渲染原理/过程</h2>
+    <ul>
+      <li>浏览器模型</li>
+      <li>渲染原理</li>
+      <li>性能优化相关</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(() => /* #temp string */)
+</script>

@@ -1,10 +1,18 @@
+<!--
+ * @Author: mrrs878@foxmail.com
+ * @Date: 2021-07-06 18:37:36
+ * @LastEditors: mrrs878@foxmail.com
+ * @LastEditTime: 2021-07-06 23:23:53
+ * @FilePath: \co-share\browser\index.html
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ppt by imtaotao</title>
-  <link rel="stylesheet" href="ppt/lib/highlight/highlight.css">
+  <link rel="stylesheet" href="/lib/highlight/highlight.css">
   <style>
     body {
       margin: 0;
@@ -26,20 +34,21 @@
     }
   </style>
 </head>
+
 <body>
   <div id="loading">
     <div>加载中...</div>
   </div>
   <div id="root"></div>
-  <script src="ppt/lib/impress.js"></script>
-  <script src="ppt/lib/highlight/highlight.pack.js"></script>
-  <script src="ppt/lib/css-module.js"></script>
-  <script src="ppt/lib/liberty.js"></script>
-  <script src="ppt/lib/liberty-plugin.js"></script>
+  <script src="/lib/impress.js"></script>
+  <script src="/lib/highlight/highlight.pack.js"></script>
+  <script src="/lib/css-module.js"></script>
+  <script src="/lib/liberty.js"></script>
+  <script src="/lib/liberty-plugin.js"></script>
   <script>
-    const basePATH = location.hostname.includes('github') ? '/co-share' : ''
+    const basePATH = location.hostname.includes('github') ? '/knowledge_share/browser' : '/browser'
 
-    window.onerror = function(error) {
+    window.onerror = function (error) {
       console.error('Occur error.')
       const dom = document.getElementById('loading')
       if (dom) {
@@ -49,7 +58,7 @@
         `
       }
     }
-    
+
     // 启动模块加载器
     Liberty.addPlugin('.css', res => {
       const { path, resource } = res
@@ -73,4 +82,5 @@
     })(basePATH + '/ppt/index.js')
   </script>
 </body>
+
 </html>

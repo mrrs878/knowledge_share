@@ -1,22 +1,17 @@
+<!--
+ * @Author: mrrs878@foxmail.com
+ * @Date: 2021-07-06 18:37:36
+ * @LastEditors: mrrs878@foxmail.com
+ * @LastEditTime: 2021-07-06 23:23:43
+ * @FilePath: \co-share\browser\ppt\component\summary\index.grs
+-->
 <template>
   <div>
-    <div
-      data-y='4000'
-      data-x='-24000'
-      data-rotate-z='90'
-      id='allSummaryOne'
-      className='step pure-text'
-    >
+    <div data-y='4000' data-x='-24000' data-rotate-z='90' id='allSummaryOne' className='step pure-text'>
       <div styleName='qa'>Q&A</div>
     </div>
 
-    <div
-      data-y='4000'
-      data-x='-24000'
-      data-rotate-z='90'
-      id='allSummaryTwo'
-      className='step pure-text'
-    >
+    <div data-y='4000' data-x='-24000' data-rotate-z='90' id='allSummaryTwo' className='step pure-text'>
       <div styleName='end-word'>谢谢观看，希望能给你带来收获</div>
       <div styleName='end-tag'>end</div>
     </div>

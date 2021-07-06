@@ -1,0 +1,48 @@
+<!--
+ * @Author: mrrs878@foxmail.com
+ * @Date: 2021-07-06 18:37:36
+ * @LastEditors: mrrs878@foxmail.com
+ * @LastEditTime: 2021-07-06 23:23:27
+ * @FilePath: \co-share\browser\ppt\component\render\index.grs
+-->
+<template>
+  <div>
+    <div data-x='-4000' data-rotate-z='90' id='browserRenderOne' styleName='title' className='step pure-text'>
+      <div>浏览器渲染流程</div>
+    </div>
+
+    <div data-x='-4000' data-rotate-z='90' id='browserRenderTwo' styleName='title' className='step pure-text'>
+      <div styleName='process-title'>浏览器渲染流程</div>
+
+      <div styleName='process-item'>
+        <div className='pure-text'>构建DOM树</div>
+        <img src='/assets/arrow.svg' />
+      </div>
+      <div styleName='process-item'>
+        <div className='pure-text'>构建渲染树</div>
+        <img src='/assets/arrow.svg' />
+      </div>
+      <div styleName='process-item'>
+        <div className='pure-text'>布局</div>
+        <img src='/assets/arrow.svg' />
+      </div>
+      <div styleName='process-item'>
+        <div className='pure-text'>绘制</div>
+        <img src='/assets/arrow.svg' />
+      </div>
+      <div styleName='process-item'>
+        <div className='pure-text'>合成</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class BrowserRender extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

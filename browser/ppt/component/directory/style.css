@@ -2,12 +2,12 @@
   font-size: 0.45rem;
 }
 
-.direactory ul {
+.directory ul {
   padding: 0 0.8rem;
   font-size: 0.3rem;
 }
 
-.direactory ul li {
+.directory ul li {
   margin-bottom: 0.2rem;
 }
 
@@ -16,12 +16,12 @@
     font-size: 0.9rem;
   }
   
-  .direactory ul {
+  .directory ul {
     padding: 0 0.8rem;
     font-size: 0.6rem;
   }
   
-  .direactory ul li {
+  .directory ul li {
     margin-bottom: 0.5rem;
   }
 }

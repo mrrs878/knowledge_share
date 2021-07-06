@@ -1,0 +1,101 @@
+<template>
+  <div>
+    <div styleName='mask' @click='this.viewNextPage'>
+    </div>
+
+    <a styleName='github-icon' href='https://github.com/mrrs878/knowledge_share/browser'>
+      <img src='/assets/github.svg' />
+    </a>
+
+    <div id='impress'>
+      <!-- 标题 -->
+      <div id='title' data-x='0' data-y='400' data-scale='2' className='step' styleName='title'>
+        <div styleName='full-screen' @click='this.launchFullscreen'>
+          全屏
+        </div>
+        <h1 className='center'>浏览器渲染原理-从一道面试题讲起</h1>
+        <h3 className='center' styleName='author'>
+          <a className='link' href='https://github.com/imtaotao'>
+            mrrs878@foxmail.com
+          </a>
+        </h3>
+      </div>
+
+      <!-- 介绍 -->
+      <div data-x='0' data-y='200' id='description' className='step pure-text'>
+        <div styleName='more-text'>
+          从输入URL到浏览器显示页面的过程？
+        </div>
+        <div styleName='more-text'>
+          浏览器是怎么渲染HTML的？
+        </div>
+        <div styleName='more-text'>
+          浏览器是怎么解释执行JavaScript的？
+        </div>
+        <div styleName='more-text'>
+          ...
+        </div>
+      </div>
+
+      <Directory />
+
+      <Browser />
+
+      <Render />
+
+      <Question />
+
+      <Summary />
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  const { launchFullscreen } = require('../../index.js')
+  const pageWidth = document.documentElement.getBoundingClientRect().width
+
+  class Root extends Grass.Component {
+    // #temp
+    constructor() {
+      super()
+      this.state = {
+        text: '全屏',
+      }
+
+      this.component = {
+        Summary: require('@comp/summary/index'),
+        Render: require('@comp/render/index'),
+        Browser: require('@comp/browser/index'),
+        Question: require('@comp/question/index'),
+        Directory: require('@comp/directory/index'),
+      }
+    }
+
+    launchFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen()
+      } else {
+        const node = document.documentElement
+        if (node.requestFullscreen) {
+          node.requestFullscreen()
+        } else if (node.webkitRequestFullScreen) {
+          node.webkitRequestFullScreen()
+        } else if (node.mozRequestFullScreen) {
+          node.mozRequestFullScreen()
+        } else {
+          node.msRequestFullscreen()
+        }
+      }
+    }
+
+    viewNextPage(e) {
+      const Impress = require('../../index.js')
+      e.pageX > pageWidth / 2
+        ? Impress.next()
+        : Impress.prev()
+    }
+  }
+  module.exports = Grass.CSSModules(style)(Root)
+</script>

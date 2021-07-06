@@ -1,0 +1,47 @@
+<template>
+  <div id='process' data-x='-1000' data-rotate-z='90' className='step pure-text'>
+    <div styleName='process-title'>主要流程</div>
+
+    <div styleName='process-item'>
+      <div className='pure-text'>创建一个网络请求线程</div>
+      <img src='/assets/arrow.svg' />
+    </div>
+    <div styleName='process-item'>
+      <div className='pure-text'>发出一个完整的http请求</div>
+      <img src='/assets/arrow.svg' />
+    </div>
+    <div styleName='process-item'>
+      <div className='pure-text'>接收到请求</div>
+      <img src='/assets/arrow.svg' />
+    </div>
+    <div styleName='process-item'>
+      <div className='pure-text'>单独拎出来的缓存问题</div>
+      <img src='/assets/arrow.svg' />
+    </div>
+    <div styleName='process-item'>
+      <div className='pure-text'>浏览器接收到数据后的解析流程</div>
+      <img src='/assets/arrow.svg' />
+    </div>
+    <div styleName='process-item'>
+      <div className='pure-text'>CSS的可视化格式模型</div>
+      <img src='/assets/arrow.svg' />
+    </div>
+    <div styleName='process-item'>
+      <div className='pure-text'>JS引擎解析过程</div>
+      <img src='/assets/arrow.svg' />
+    </div>
+    <div styleName='process-item'>
+      <div className='pure-text'>其它（如跨域，web安全等）</div>
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class Process extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

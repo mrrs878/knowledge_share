@@ -1,5 +1,12 @@
+/*
+ * @Author: mrrs878@foxmail.com
+ * @Date: 2021-07-06 18:37:36
+ * @LastEditors: mrrs878@foxmail.com
+ * @LastEditTime: 2021-07-06 19:00:30
+ * @FilePath: \co-share\browser\ppt\index.js
+ */
 require('./global.css')
-require('./lib/flexible.js')
+require('/lib/flexible.js')
 const Grass = require('@Grass')
 const Root = require('@comp/root/index')
 

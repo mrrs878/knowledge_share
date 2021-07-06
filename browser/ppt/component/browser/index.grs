@@ -1,0 +1,60 @@
+<!--
+ * @Author: mrrs878@foxmail.com
+ * @Date: 2021-07-06 18:37:36
+ * @LastEditors: mrrs878@foxmail.com
+ * @LastEditTime: 2021-07-06 23:01:57
+ * @FilePath: \co-share\browser\ppt\component\browser\index.grs
+-->
+<template>
+  <div>
+    <div data-x='-2000' data-rotate-z='90' id='browserPlatform' styleName='title' className='step pure-text'>
+      <div styleName='left-title more-text'>
+        浏览器是多进程的
+      </div>
+    </div>
+    <div data-x='-2000' data-rotate-z='90' id='browserPlatformOne' styleName='title' className='step pure-text'>
+      <div styleName='left-title more-text'>
+        浏览器都包含哪些进程？
+      </div>
+    </div>
+
+    <div data-x='-2000' data-y='-2000' id='browserPlatformTwo' styleName='browser-platform' className='step pure-text'>
+      <span styleName='sub-title'>Browser进程</span>
+      <br />
+      <span styleName='sub-title'>第三方插件进程</span>
+      <br />
+      <span styleName='sub-title'>GPU进程</span>
+      <br />
+      <span styleName='sub-title'>浏览器渲染进程（浏览器内核）（Renderer进程，内部是多线程的）</span>
+    </div>
+
+    <div data-x='-2000' data-rotate-z='90' id='browserPlatformThree' styleName='title' className='step pure-text'>
+      <div styleName='left-title more-text'>
+        渲染进程都包含哪些线程？
+      </div>
+    </div>
+
+    <div data-x='-3000' data-rotate-z='90' styleName='browser-platform' id='renderProcessOne'
+      className='step pure-text'>
+      <span styleName='sub-title'>GUI渲染线程</span>
+      <br />
+      <span styleName='sub-title'>JS引擎线程</span>
+      <br />
+      <span styleName='sub-title'>事件触发线程</span>
+      <br />
+      <span styleName='sub-title'>定时触发器线程</span>
+      <br />
+      <span styleName='sub-title'>异步http请求线程</span>
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class BrowserPlatform extends Grass.Component {
+      // #temp
+    }
+  )
+</script>
