@@ -1,0 +1,34 @@
+<template>
+  <div>
+    <div
+      data-y='4000'
+      data-x='-24000'
+      data-rotate-z='90'
+      id='allSummaryOne'
+      className='step pure-text'
+    >
+      <div styleName='qa'>Q&A</div>
+    </div>
+
+    <div
+      data-y='4000'
+      data-x='-24000'
+      data-rotate-z='90'
+      id='allSummaryTwo'
+      className='step pure-text'
+    >
+      <div styleName='end-word'>谢谢观看，希望能给你带来收获</div>
+      <div styleName='end-tag'>end</div>
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class Summary extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

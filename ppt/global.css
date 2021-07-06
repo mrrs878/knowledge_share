@@ -1,0 +1,107 @@
+/* 该类添加在还未展示的步骤结点，当该元素被导航时会自动删除future类，显示页面 */
+.future {
+  pointer-events: none;
+}
+
+/* 该类会在步骤元素被导航过后自动添加 */
+.past {
+  pointer-events: none;
+}
+
+/* 该类会被自动添加到目前位于屏幕中央的步骤结点，这对幻灯片展示时的动画效果非常有用 */
+/* .present .rotating {
+  transform: rotate(-10deg);
+} */
+
+.step {
+  opacity: 0;
+  width: 85vw;
+  font-size: 0.3rem;
+  transition: all 0.5s;
+}
+
+/* 该类会被自动添加到当前的步骤元素，与presentclass类似 */
+.step.active {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+/* impress-on-* */
+/* 用于定义每个步骤结点的样式，步骤结点的id可以在URL中看到，如#/step-1 */
+.impress-on-overview .step {
+  opacity: 1;
+  cursor: pointer;
+}
+.impress-on-step-1,
+.impress-on-step-2,
+.impress-on-step-3 {
+  background: rgb(49, 54, 64);
+}
+
+::-webkit-scrollbar {
+  width: 0.18rem;
+  height: 0.18rem;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 0.18rem;
+  background: -webkit-gradient(linear,left top, right bottom, from(#485563), to(#29323c));
+  -webkit-border-radius: 0.08rem;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 0.18rem;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 0.08rem;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pure-text {
+  font-size: 0.6rem;
+  color: #e7edf1;
+  font-family: xihei, 微软雅黑;
+  font-weight: bold;
+}
+
+.pure-code code {
+  font-size: 0.35rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.half {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.link {
+  color: #94d6e9;
+}
+
+@media (max-width: 500px) {
+  .step {
+    width: 220vw;
+  }
+  .pure-text {
+    font-size: 1.8rem;
+  }
+
+  .pure-code code {
+    font-size: 0.6rem;
+  }
+
+  .half {
+    width: 100%;
+    padding-left: 0.8rem !important;
+  }
+}

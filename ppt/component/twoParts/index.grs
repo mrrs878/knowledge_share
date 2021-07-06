@@ -1,0 +1,71 @@
+<template>
+  <div>
+    <div
+      data-y='3000'
+      data-x='-18000'
+      data-rotate-z='90'
+      id='coAnlysissOne'
+      className='step pure-text'
+    >
+      <div styleName='title top-title'>
+        <a
+          className='link'
+          href='https://github.com/tj/co/blob/master/index.js'
+        >
+          co
+        </a>
+      </div>
+
+      <div styleName='left-title more-text'>
+        co 这个库是
+        <a
+          className='link'
+          href='https://github.com/tj'
+        >
+          TJ
+        </a>
+        大神为 koa 框架编写的一个基于 generator + promise 处理异步行为的库。这种结合带来了强大的异步交互能力，可以显着改进在 JavaScript 中编写异步代码的语言级模型。这对于基于事件驱动的 nodeJs 来说，是非常利好的事情。并且为
+        <a
+          className='link'
+          href='https://github.com/tc39/ecmascript-asyncawait'
+        >
+          async/await
+        </a>
+        语法的诞生提供了实验基础
+      </div>
+
+      <div styleName='left-title more-text'>
+        # 来看看源码是怎么写的
+      </div>
+    </div>
+
+    <!-- 内容 -->
+    <ToPromise />
+    <ArrayToPromise />
+    <ObjectToPromise />
+    <Theable />
+    <CoWrap />
+    <Summary />
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class CoAnlysiss extends Grass.Component {
+      // #temp
+      constructor () {
+        super()
+        this.component = {
+          CoWrap: require('./coWrap'),
+          Theable: require('./theable'),
+          Summary: require('./summary'),
+          ToPromise: require('./toPromise'),
+          ArrayToPromise: require('./arrayToPromise'),
+          ObjectToPromise: require('./objectToPromise'),
+        }
+      }
+    }
+  )
+</script>

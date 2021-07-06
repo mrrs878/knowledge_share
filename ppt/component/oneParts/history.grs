@@ -1,0 +1,40 @@
+<template>
+  <div
+    id='history'
+    data-x='-1000'
+    data-rotate-z='90'
+    className='step pure-text'
+  >
+    <div styleName='history-title'>发展历程</div>
+
+    <div styleName='history-item'>
+      <div className='pure-text'>callback</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>deferred (promise)</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>promise</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>generator + promise</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>async/await</div>
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class History extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

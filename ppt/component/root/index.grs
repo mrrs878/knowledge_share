@@ -1,0 +1,131 @@
+<template>
+  <div>
+    <div
+      styleName='mask'
+      @click='this.viewNextPage'
+    >
+    </div>
+
+    <a
+      styleName='github-icon'
+      href='https://github.com/imtaotao/co-share'
+    >
+      <img src='ppt/assets/github.svg' />
+    </a>
+
+    <div id='impress'>
+      <!-- 标题 -->
+      <div
+        id='title'
+        data-x='0'
+        data-y='400'
+        data-scale='2'
+        className='step'
+        styleName='title'
+      >
+        <div
+          styleName='full-screen'
+          @click='this.launchFullscreen'
+        >
+          全屏
+        </div>
+        <h1 className='center'>js 异步历史与 co.js 解读<sup>*</sup> </h1>
+        <h3
+          className='center'
+          styleName='author'
+        >
+          <a
+            className='link'
+            href='https://github.com/imtaotao'
+          >
+            chentao
+          </a>
+        </h3>
+      </div>
+      
+      <!-- 介绍 -->
+      <div
+        data-x='0'
+        data-y='200'
+        id='description'
+        className='step pure-text'
+      >
+        <div styleName='more-text'>
+          为什么要解读 co.js
+        </div>
+        <div styleName='more-text'>
+          这个库是用来做什么的 ？<br/>我们解读他能够获得什么 ？
+        </div>
+      </div>
+
+      <div
+        id='one'
+        data-x='500'
+        className='step pure-text'
+      >
+        <div styleName='history-title'>我们需要从 JavaScript 异步历史说起</div>
+      </div>
+
+      <!-- 目录 -->
+      <Directory />
+
+      <!-- 第一部分的 -->
+      <OneParts />
+
+      <!-- 第二部分的 -->
+      <TwoParts />
+
+      <!-- 总结 -->
+      <Summary />
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  const { launchFullscreen } = require('../../index.js')
+  const pageWidth = document.documentElement.getBoundingClientRect().width
+
+  class Root extends Grass.Component {
+    // #temp
+    constructor () {
+      super()
+      this.state = {
+        text: '全屏',
+      }
+
+      this.component = {
+        Summary: require('@comp/summary/index'),
+        OneParts: require('@comp/oneParts/index'),
+        TwoParts: require('@comp/twoParts/index'),
+        Directory: require('@comp/directory/index'),
+      }
+    }
+   
+    launchFullscreen () {
+      if (document.fullscreenElement) {
+        document.exitFullscreen()
+      } else {
+        const node = document.documentElement
+        if(node.requestFullscreen){
+          node.requestFullscreen()
+        } else if (node.webkitRequestFullScreen){
+          node.webkitRequestFullScreen()
+        } else if (node.mozRequestFullScreen){
+          node.mozRequestFullScreen()
+        } else {
+          node.msRequestFullscreen()
+        }
+      }
+    }
+
+    viewNextPage (e) {
+      const Impress = require('../../index.js')
+      e.pageX > pageWidth / 2
+        ? Impress.next()
+        : Impress.prev()
+    }
+  }
+  module.exports = Grass.CSSModules(style)(Root)
+</script>
